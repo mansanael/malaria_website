@@ -1,2 +1,2 @@
  [build] 
- command = "python manage.py collectstatic --noinput" publish = "malaria_website/main/templates"
+ command = "python manage.py collectstatic --noinput" publish = "/main/templates"
