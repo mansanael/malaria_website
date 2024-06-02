@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Malaria Modeling Program{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.2.2/dist/cdn.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Header -->
+    <header class="border-b py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="{% static 'path/to/your/logo1.png' %}" alt="Logo 1" class="h-12">
+                <img src="{% static 'path/to/your/logo2.png' %}" alt="Logo 2" class="h-12">
+                <!-- Add more logos as needed -->
+            </div>
+            <nav class="space-x-4">
+                <a href="{% url "home" %} " class="text-gray-700 hover:text-gray-900">Accueil</a>
+                <a href=" {% url "about" %} " class="text-gray-700 hover:text-gray-900">A propos</a>
+                <a href=" {% url "handbook" %} " class="text-gray-700 hover:text-gray-900">Manuel</a>
+                <a href=" {% url "emod" %} " class="text-gray-700 hover:text-gray-900">EMOD</a>
+                <a href=" {% url "ressources" %} " class="text-gray-700 hover:text-gray-900">Resources</a>
+                <a href=" {% url "events" %} " class="text-gray-700 hover:text-gray-900">Evenements</a>
+                <a href=" {% url "contact" %} " class="text-gray-700 hover:text-gray-900">Contact</a>
+
+            </nav>
+            <div class="space-x-4">
+                <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-700 hover:text-gray-900"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-8 px-4 md:px-8 lg:px-16">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- About Us -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">ABOUT US</h3>
+                <p>Our long-term goal is to train a critical mass of modeling scientists who will..... <a href="#" class="text-yellow-400 underline">Readmore</a></p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">QUICK LINKS</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">EMOD Papers</a></li>
+                    <li><a href="#" class="hover:underline">Coding Resources</a></li>
+                    <li><a href="#" class="hover:underline">Data Sources</a></li>
+                    <li><a href="#" class="hover:underline">Science Communication</a></li>
+                </ul>
+            </div>
+            <!-- Other Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">OTHER LINKS</h3>
+                <ul>
+                    <li><a href="#" class="hover:underline">EMOD Documentation</a></li>
+                    <li><a href="#" class="hover:underline">NU Malaria Modeling</a></li>
+                    <li><a href="#" class="hover:underline">AMMnet</a></li>
+                </ul>
+            </div>
+            <!-- Follow Us -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">FOLLOW US</h3>
+                <div class="flex space-x-4 mb-4">
+                    <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-red-600 hover:text-red-800"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-blue-900 hover:text-blue-1100"><i class="fab fa-wordpress"></i></a>
+                </div>
+                <p><i class="fas fa-envelope"></i> feghana24@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Address: PMB 31</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ho, Volta region</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function carousel() {
+            return {
+                activeSlide: 0,
+                slides: [
+                    { title: 'Malaria Modeling Faculty Enrichment Program 2024', description: 'Malaria burden remains high in Sub-Saharan Africa despite two decades of intense intervention. Regular analysis and use of public health data will lead to more effective control through evidence-based decision making.', image: '{% static 'path/to/your/carousel-image1.png' %}' },
+                    { title: 'Another Slide Title', description: 'Another slide description.', image: '{% static 'path/to/your/carousel-image2.png' %}' },
+                    // Add more slides as needed
+                ],
+                init() {
+                    this.startCarousel();
+                },
+                startCarousel() {
+                    setInterval(() => {
+                        this.nextSlide();
+                    }, 5000);
+                },
+                prevSlide() {
+                    this.activeSlide = this.activeSlide > 0 ? this.activeSlide - 1 : this.slides.length - 1;
+                },
+                nextSlide() {
+                    this.activeSlide = this.activeSlide < this.slides.length - 1 ? this.activeSlide + 1 : 0;
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

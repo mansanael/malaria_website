@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - Malaria Modeling Program{% endblock %}
+
+{% block content %}
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center">
+        <div class="w-full lg:w-1/2">
+            <img src="{% static 'path/to/your/image.png' %}" alt="Mission Image" class="rounded-lg shadow-lg">
+        </div>
+        <div class="w-full lg:w-1/2 lg:pl-16 mt-8 lg:mt-0">
+            <h2 class="text-3xl font-bold mb-4">Our Missions</h2>
+            <p class="text-gray-700 mb-4">Malaria burden remains high in Sub-Saharan Africa despite two decades of intense intervention. Regular analysis and use of public health data will lead to more effective control through evidence-based decision making.</p>
+            <h3 class="text-2xl font-bold mb-4">Our long-term goal is to train a critical mass of modeling scientists who are:</h3>
+            <ul class="list-disc pl-5 text-gray-700 mb-4 space-y-2">
+                <li>Retained within Sub-Saharan Africa</li>
+                <li>Training the next generation of modelers</li>
+                <li>Working closely with local malaria control programs to provide operational support</li>
+                <li>Competitive in obtaining grants from international funding agencies</li>
+                <li>Closely networked with each other across Africa and with international partners</li>
+            </ul>
+            <p class="text-gray-700 mb-4">To help achieve this goal, Northwestern University’s malaria modeling team is offering an 18-week intensive in-person training program in applied malaria modeling for Sub-Saharan African mathematical modeling faculty – with or without public health backgrounds – tailored to their experience and needs.</p>
+            <p class="text-gray-700">Training is focused on applied modeling with EMOD, an open-source malaria transmission modeling software that is currently used to support malaria programs. Participants will design their own research question and focal training project using EMOD that will form the basis of a Specific Aims page (grant proposal summary page) to be developed during the program.</p>
+        </div>
+    </div>
+</section>
+
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Program Highlights</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg p-6 shadow-md">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-ruler-combined text-4xl text-purple-600"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-2">Multi-Modal Training</h4>
+                <p class="text-gray-700 mb-4">Multi-modal training in applied malaria modeling - Hands-on tutorials and exercises focused on model configuration and analysis, supplemented by lectures and journal clubs, to enable participants to independently carry out their focal projects. Participants will run models using Northwestern’s high performance computing cluster.</p>
+                <a href="#" class="text-purple-600 underline">Read More</a>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg p-6 shadow-md">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-file-alt text-4xl text-pink-600"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-2">Scientific Communication</h4>
+                <p class="text-gray-700 mb-4">Training in written and oral scientific communication - Iterative revisions of draft documents and oral presentations, with feedback from program director, peers, and other Northwestern modelers.</p>
+                <a href="#" class="text-pink-600 underline">Read More</a>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg p-6 shadow-md">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-user-friends text-4xl text-yellow-600"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-2">Dedicated Mentorship</h4>
+                <p class="text-gray-700 mb-4">Weekly 1-on-1 meetings with program director and an assigned partner from Northwestern’s team of modelers.</p>
+                <a href="#" class="text-yellow-600 underline">Read More</a>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-white rounded-lg p-6 shadow-md">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-network-wired text-4xl text-blue-600"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-2">Building Connections</h4>
+                <p class="text-gray-700 mb-4">Building connections with a global community of malaria modelers - Join and participation in the Applied Malaria Modeling Network (AMMnet). Connect with faculty enrichment program alumni.</p>
+                <a href="#" class="text-blue-600 underline">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

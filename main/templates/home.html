@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Malaria Modeling Program{% endblock %}
+
+{% block content %}
+<!-- Carousel -->
+<div class="container mx-auto my-8" x-data="carousel()">
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="relative">
+            <template x-for="(slide, index) in slides" :key="index">
+                <div x-show="activeSlide === index" x-transition:enter="transition-opacity duration-700" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="w-full h-64 relative">
+                    <img :src="slide.image" alt="Carousel Image" class="w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent to-gray-100"></div>
+                    <div class="absolute bottom-0 left-0 p-4 bg-opacity-75 bg-white rounded-lg">
+                        <h2 class="text-4xl font-bold" x-text="slide.title"></h2>
+                        <p class="text-gray-700 mt-2" x-text="slide.description"></p>
+                        <button class="mt-4 bg-black text-white px-6 py-2 rounded-full">READ MORE</button>
+                    </div>
+                </div>
+            </template>
+            <div class="absolute inset-y-0 left-0 flex items-center pl-4">
+                <button @click="prevSlide" class="bg-black bg-opacity-50 text-white p-2 rounded-full">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-4">
+                <button @click="nextSlide" class="bg-black bg-opacity-50 text-white p-2 rounded-full">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Section -->
+<section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-purple-500 text-lg font-semibold">Basic Info about us</h2>
+            <h3 class="text-3xl font-bold">Our long-term goal is to train a critical mass of modeling scientists who are:</h3>
+            <ul class="text-left mt-4 text-gray-700 space-y-2 mx-auto w-2/3">
+                <li>1. Retained within Sub-Saharan Africa</li>
+                <li>2. Training the next generation of modelers</li>
+                <li>3. Working closely with local malaria control programs to provide operational support</li>
+                <li>4. Competitive in obtaining grants from international funding agencies</li>
+                <li>5. Closely networked with each other across Africa and with international partners</li>
+            </ul>
+        </div>
+
+        <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold mb-8">Our Programs Highlights</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-red-600 text-white rounded-lg p-6 shadow-md transform hover:scale-105 transition-transform">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class="fas fa-laptop-code text-4xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Multi-Model Training</h4>
+                    <p class="mb-4">Multi-modal training in applied malaria modeling</p>
+                    <a href="#" class="underline">Read More</a>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-teal-600 text-white rounded-lg p-6 shadow-md transform hover:scale-105 transition-transform">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class="fas fa-comments text-4xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Scientific Communication</h4>
+                    <p class="mb-4">Training in written and oral scientific communication</p>
+                    <a href="#" class="underline">Read More</a>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-yellow-600 text-white rounded-lg p-6 shadow-md transform hover:scale-105 transition-transform">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class="fas fa-user-graduate text-4xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Dedicated Mentorship</h4>
+                    <p class="mb-4">Weekly 1-on-1 meetings with program director and partners</p>
+                    <a href="#" class="underline">Read More</a>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-orange-500 text-white rounded-lg p-6 shadow-md transform hover:scale-105 transition-transform">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class="fas fa-handshake text-4xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Building Connections</h4>
+                    <p class="mb-4">Building connections with a global community of malaria modelers</p>
+                    <a href="#" class="underline">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
